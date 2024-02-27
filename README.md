@@ -20,7 +20,13 @@ Then configure this project:
 terraform import "github_repository.terraform-playground" "name-of-github-repository-resource"
 ```
 
-## Fine-grained personal access token
+## Fine-grained personal access token for GitHub
+
+The following token can be used locally to read all the current settings of your GitHub organisation, repositories, teams, et cetera.
+
+Create the following GitHub token, and store it in `.env` as `export GITHUB_TOKEN=...`.
+
+Resource owner: `nl-design-system`:
 
 - Repository:
   - Administration: read and write
@@ -30,6 +36,8 @@ terraform import "github_repository.terraform-playground" "name-of-github-reposi
 - Organization:
   - Administration: read only
   - Members: read and write
+
+To create the token to actually apply all changes, you must configure a "read and write" token. This is the token you would configure in Terraform Cloud for example (recommended), or the token you would use if you would apply state from your own computer (not recommended).
 
 ## Terraform Cloud
 
